@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": "Bearer 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"
+                    "Authorization": "falta clave api"
                 },
                 body: JSON.stringify({
                     model: "gpt-4o-mini-search-preview",
