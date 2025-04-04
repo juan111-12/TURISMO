@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Turíst#2536d3Alta Gracia</title>
+    <link rel="Website icon" href="./imagenes/logo.png">
+    <link rel="stylesheet" href="./css/turismo.css">
+    <link rel="stylesheet" href="./css/chat.css"> <!-- CSS del Chatbot -->
+    <script defer src="./js/chat.js"></script>   <!-- JS del Chatbot -->
+    <script defer src="./js/navbar.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+      <!-- FontAwesome para los iconos -->
+      <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+
+
+    <!--COOKIS-->
+    <script src="./js/aviso-cookies.js" defer></script>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <script defer src="cookies.html"></script>
+
+    <style>
+       /* Contenedor de la barra de navegación */
+/* Estilo para la barra de navegación */
+.navbar-container {
+    position: relative;
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+    justify-content: space-between;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+/* Contenedor de la cuenta fuera de la barra de navegación */
+.account-container {
+    position: absolute; /* Lo mueve fuera de la barra */
+    right: 20px; /* Alinea el contenedor a la derecha */
+    top: 50%; /* Lo centra verticalmente respecto a la barra de navegación */
+    transform: translateY(-50%); /* Ajusta para centrar perfectamente el contenedor */
+    display: flex;
+    align-items: center; /* Alinea verticalmente el ícono de cuenta y el nombre */
+}
+
+/* Estilo del icono de cuenta */
+.account-icon {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(145deg, #ffffff, #f3f3f3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    border: 2px solid rgba(200, 200, 200, 0.5);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    margin-right: 10px; /* Deja un espacio entre el icono y el nombre */
+}
+
+/* Icono dentro del círculo */
+.account-icon i {
+    font-size: 22px;
+    color: #4285F4;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Nombre de la cuenta */
+.account-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Menú de cerrar sesión */
+.logout-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: -110px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logout-menu button {
+    background: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.logout-menu button:hover {
+    background: #d43f3f;
+}
+
+    </style>
+</head>
+<body>
+
+    <!--COOKIS-->
+    <div class="aviso-cookies" id="aviso-cookies">
+		<img class="galleta" src="./imagenes/cookis_robot.png" alt="Galleta"> 
+        <h3 class="titulo">Cookies</h3>
+        <p class="parrafo">Utilizamos cookies propias y de terceros para mejorar nuestros servicios.</p>
+        <button class="boton" id="btn-aceptar-cookies">De acuerdo</button>
+        <a class="enlace" href="aviso-cookies.html">Aviso de Cookies</a>
+    </div>
+    <div class="fondo-aviso-cookies" id="fondo-aviso-cookies"></div>
+    
+
+    <header class="navbar-container">
+        <nav class="navbar" aria-label="Menú de navegación">
+            <ul class="menu">
+                <li><i class="fas fa-home"></i> <a href="turismo.html">Inicio</a></li>
+                <li><i class="fas fa-map-marked-alt"></i> <a href="destinos.html">Destinos</a></li>
+                <li><i class="fas fa-envelope"></i> <a href="contacto.html">Contacto</a></li>
+                <li><i class="fas fa-exclamation-triangle"></i> <a href="emergencia.html">Emergencia</a></li>
+            </ul>
+        </nav>
+        <!-- Ícono de cuenta con nombre dinámico dentro de la barra de navegación -->
+        <div class="account-container">
+            <a href="formulario.html" class="account-icon" id="account-link" target="_blank">
+                <i class="fa-solid fa-user"></i>
+            </a>
+            
+            <span class="account-name" id="account-name"></span>
+            <div class="logout-menu" id="logout-menu">
+                <button onclick="logout()">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="tagline">
+            <h2>¡Bienvenido a Alta Gracia!</h2>
+        </section>
+
+        <section class="hero-container">
+            <h1 class="hero-title">Descubre Alta Gracia con Jarvitur</h1>
+            <p class="hero-subtitle">
+                Jarvitur, tu guía turístico inteligente, te acompaña en cada paso de tu viaje. Explora los rincones más asombrosos de Alta Gracia, recibe recomendaciones personalizadas y vive experiencias inolvidables.
+            </p>
+            
+        </section>
+    </main>
+
+    <!--CONTENIDO-->
+    <section> 
+        <div class="titulo">
+            <br>
+            <h1><i class="fa-solid fa-circle-question" style="color: #1f488e;"></i></i> ¿Qué hace única a nuestra IA?</h1>
+        </div>
+        <ul class="letras">
+            <br>
+            <li><i class="fa-solid fa-cloud" style="color: #1f488e;"></i> <strong> Clima en tiempo real</strong>: Consulta el pronóstico antes de salir.</li>
+            <br>
+            <li><i class="fa-solid fa-clock" style="color: #1f488e;"></i> <strong>Información actualizada</strong>: Hora local y eventos en vivo.</li>
+            <br>
+            <li><i class="fa-solid fa-car" style="color: #1f488e;"></i> <strong>Rutas personalizadas</strong>: Tours según tus intereses.</li>
+            <br>
+            <li> <i class="fa-solid fa-map-pin" style="color: #1f488e;"></i> <strong>Exploración guiada</strong>: Lugares históricos, naturaleza y más.</li>
+        </ul>
+
+        <br>
+        <div class="marketing">
+            <br>
+            <p><i class="fa-solid fa-magnifying-glass" style="color: #1f488e;"></i> Con <strong>Jarvitur</strong>, accede a <em>mapas interactivos</em>, <em>recomendaciones en tiempo real</em> y <em>experiencias personalizadas</em> para aprovechar al máximo tu viaje.</p>
+            <br>
+        </div>
+
+        <h1><i class="fa-solid fa-robot" style="color: #1f488e;"></i> ¿Cómo usar Jarvitur?</h1>
+        <div class="letras">
+            <p>
+                Es muy fácil, solo accede a nuestra web o aplicación, indica tus preferencias y deja que Jarvitur diseñe la mejor experiencia para ti.
+            </p>   
+            <br>
+        <div class="titulo">
+            <h1>¡Tu aventura comienza ahora!</h1>
+            <br>
+        </div>
+        </div>
+        
+    </section>
+    
+    </section>
+
+
+    <!--CHAT-->
+    <!-- 📢 GIF como botón -->
+        <img id="chatbot-toggle" class="chatbot-video" src="./imagenes/chat.gif" alt="Chatbot">
+
+    
+    <!-- 📢 Ventana del Chatbot -->
+    <div id="chatbot-container" class="chatbot-container hidden">
+        <header class="chatbot-header">
+            <h2>Jarvitur - Guía de Alta Gracia</h2>
+            <button id="close-chatbot" class="close-btn">&times;</button>
+        </header>
+        
+        <div id="chat-window" class="chat-window"></div>
+        
+        <!-- Contenedor para el campo de texto y los botones (Borrar Chat a la izquierda, Enviar a la derecha) -->
+        <div class="chat-input">
+            <button id="clear-chat" class="clear-chat-btn">Borrar Chat</button>
+            <input type="text" id="user-input" placeholder="Escribe tu pregunta..." autocomplete="off">
+            <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+    
+    <script>
+        // Cargar usuario desde localStorage
+        function loadUser() {
+            const userData = JSON.parse(localStorage.getItem("user"));
+    
+            if (userData && userData.nombre) {
+                document.getElementById("account-name").textContent = userData.nombre;
+                document.getElementById("account-name").style.display = "inline-block";
+                document.getElementById("account-link").href = "#"; // Desactiva el enlace al login
+                document.getElementById("account-link").onclick = toggleLogoutMenu;
+            }
+        }
+    
+        // Mostrar/Ocultar menú de cerrar sesión
+        function toggleLogoutMenu() {
+            const menu = document.getElementById("logout-menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+    
+        // Cerrar sesión
+        function logout() {
+            localStorage.removeItem("user");
+            window.location.href = "formulario.html";
+        }
+    
+        // Limpiar chat
+        function clearChat() {
+            const chatWindow = document.getElementById("chat-window");
+            chatWindow.innerHTML = ''; // Elimina todo el contenido del chat
+            localStorage.removeItem("chatMessages"); // Elimina los mensajes guardados en localStorage
+        }
+    
+        // Ejecutar la función al cargar la página
+        loadUser();
+    
+        // Event listener para borrar el chat
+        const clearChatButton = document.getElementById("clear-chat");
+        clearChatButton.addEventListener("click", clearChat);
+    </script>
+    <footer class="footer">
+
+            <p>&copy; 2025 Guía Turística de Alta Gracia. Todos los derechos reservados.</p>
+            <p>Este sitio es un prototipo de <strong>Jarvitur</strong>, un guía turístico potenciado por IA.</p>
+    
+            <!-- Contenedor de iconos sociales -->
+            <div class="footer-social">
+                <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" class="social-icon twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>    

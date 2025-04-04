@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     font-family: 'Poppins', sans-serif;
+}
+
+/* Fondo de la página */
+body {
+    background-image: url('../imagenes/turismo.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding-bottom: 100px; /* Para asegurar que el chatbot no se solape con el contenido */
+}
+
+/* Contenedor de la barra de navegación */
+.navbar-container {
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    max-width: 1200px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del menú de navegación */
+.navbar {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    width: 120px;
+    height: 70px;
+    overflow: hidden;
+}
+
+.logo img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+/* Estilo de los enlaces del menú */
+.menu {
+    display: flex;
+    text-align: center;
+    gap: 40px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #0066cc;
+}
+
+/* Estilo del botón de contacto */
+.contact-button {
+    background-color: #0095ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #0077cc;
+}
+
+.arrow-icon {
+    margin-left: 8px;
+}
+
+/* Frase principal */
+.tagline {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Hero section */
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hero-title {
+     font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 4rem;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: #ffffff;
+    max-width: 700px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.btn-primary {
+    background-color: #0095ff;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0077cc;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #333;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #f0f0f0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+

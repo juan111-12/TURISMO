@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Jarvitur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            display: none;
+            flex-direction: column;
+        }
+
+        .chat-window {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: auto;
+            max-height: 80%;
+        }
+
+        .message-box {
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+
+        .content {
+            margin-left: 10px;
+        }
+
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #toggle-voice {
+            position: fixed;
+            bottom: 140px;
+            right: 20px;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #toggle-voice:hover {
+            background-color: #218838;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button id="chatbot-toggle" class="chatbot-toggle">Chatbot</button>
+
+    <div id="chatbot-container" class="chatbot-container">
+        <div id="chat-window" class="chat-window"></div>
+        <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+        <button id="send-btn">Enviar</button>
+        <button id="close-chatbot">Cerrar</button>
+    </div>
+
+    <!-- Botón para activar/desactivar la voz -->
+    <button id="toggle-voice">🔊 Silenciar</button>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>

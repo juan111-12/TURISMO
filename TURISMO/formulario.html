@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvitur - Guía Turística</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2a2a2a, #0d0d0d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            border: 2px solid rgba(0, 255, 255, 0.3);
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #00eaff;
+        }
+
+        label {
+            font-size: 15px;
+            display: block;
+            margin-bottom: 8px;
+            text-align: left;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(90deg, #00eaff, #0088ff);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .switch-section {
+            margin-top: 20px;
+        }
+
+        .switch-section a {
+            text-decoration: none;
+            color: #00eaff;
+            font-weight: bold;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .eye-icon {
+            position: absolute;
+            right: 10px;
+            top: 12px;
+            cursor: pointer;
+            color: #00eaff;
+        }
+
+        #login-form {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container" id="form-container">
+        <!-- Formulario de Registro -->
+        <div id="register-form">
+            <h2>Registro en Jarvitur</h2>
+            <form onsubmit="registerUser(event)">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Tu email" required>
+                <label for="password">Contraseña:</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" placeholder="Contraseña segura" required>
+                    <span class="eye-icon" onclick="togglePassword('password')">🙈</span>
+                </div>
+                <button type="submit">Registrarse</button>
+            </form>
+            <p class="switch-section">¿Ya tienes cuenta? <a href="#" onclick="switchToLogin()">Inicia sesión aquí</a></p>
+        </div>
+
+        <!-- Formulario de Inicio de Sesión -->
+        <div id="login-form">
+            <h2>Iniciar Sesión en Jarvitur</h2>
+            <form onsubmit="loginUser(event)">
+                <label for="email-login">Email:</label>
+                <input type="email" id="email-login" name="email" placeholder="Tu email" required>
+                <label for="password-login">Contraseña:</label>
+                <div class="password-container">
+                    <input type="password" id="password-login" name="password" placeholder="Tu contraseña" required>
+                    <span class="eye-icon" onclick="togglePassword('password-login')">🙈</span>
+                </div>
+                <button type="submit">Iniciar sesión</button>
+            </form>
+            <p class="switch-section">¿No tienes cuenta? <a href="#" onclick="switchToRegister()">Regístrate aquí</a></p>
+        </div>
+    </div>
+
+    <script>
+        function registerUser(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById("nombre").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (nombre && email && password) {
+                const user = { nombre, email, password };
+                localStorage.setItem("user", JSON.stringify(user));
+
+                alert("Registro exitoso. Ahora puedes iniciar sesión.");
+                switchToLogin();
+            } else {
+                alert("Por favor, completa todos los campos.");
+            }
+        }
+
+        function loginUser(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email-login").value;
+            const password = document.getElementById("password-login").value;
+            
+            const userData = JSON.parse(localStorage.getItem("user"));
+
+            if (userData && userData.email === email && userData.password === password) {
+                alert("Inicio de sesión exitoso.");
+                window.location.href = "turismo.html";
+            } else {
+                alert("Usuario o contraseña incorrectos.");
+            }
+        }
+
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            input.type = input.type === "password" ? "text" : "password";
+        }
+
+        function switchToRegister() {
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("register-form").style.display = "block";
+        }
+
+        function switchToLogin() {
+            document.getElementById("register-form").style.display = "none";
+            document.getElementById("login-form").style.display = "block";
+        }
+    </script>
+</body>
+</html>
