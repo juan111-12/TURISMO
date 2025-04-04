@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": "falta clave api"
+                    "Authorization": "FALTA CLAVE API "
                 },
                 body: JSON.stringify({
                     model: "gpt-4o-mini-search-preview",
